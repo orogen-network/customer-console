@@ -11,10 +11,10 @@ function CheckoutReturn() {
   return (
     <div className="mx-auto max-w-[640px] space-y-5 py-12">
       <Card className="text-center">
-        <Badge tone="success" dot>payment settled</Badge>
-        <h1 className="mt-4 font-display text-display-xl text-crust-100">$ 200.00 credited</h1>
-        <p className="mt-1 font-mono text-[10.5px] uppercase tracking-wider text-crystal-400">
-          payment settled · {railLabel}
+        <Badge tone="warn" dot>preview route</Badge>
+        <h1 className="mt-4 font-display text-display-xl text-crust-100">$ 200.00 credit preview</h1>
+        <p className="mt-1 font-mono text-[10.5px] uppercase tracking-wider text-magma-400">
+          no payment settled on test edge · {railLabel}
         </p>
         <div className="mt-6 rounded-lg border border-crust-800 bg-crust-1000 p-4 text-left text-[12px]">
           <div className="flex items-center justify-between">

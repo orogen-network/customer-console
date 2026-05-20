@@ -38,7 +38,7 @@ function ReceiptEnvelope({ requestId, isMismatch }: { requestId: string; isMisma
         <div className="space-y-4">
           <div className="flex items-start justify-between">
             <div>
-              <div className="font-mono text-[10.5px] uppercase tracking-wider text-crust-500">orogen receipt</div>
+              <div className="font-mono text-[10.5px] uppercase tracking-wider text-crust-500">orogen receipt preview</div>
               <div className="mt-1 flex items-center gap-2">
                 <HashChip value={requestId} lead={12} tail={4} />
                 {isMismatch ? (
@@ -63,7 +63,7 @@ function ReceiptEnvelope({ requestId, isMismatch }: { requestId: string; isMisma
 
           <div className="flex items-center gap-2 pt-3">
             <Badge tone={isMismatch ? "mute" : "success"} dot={!isMismatch}>
-              signature verified locally
+              representative signature state
             </Badge>
             <a
               href={config.attestationExplorerUrl}

@@ -60,20 +60,20 @@ function Dashboard() {
         <div>
           <h1 className="text-title font-semibold text-crust-100">Dashboard</h1>
           <p className="mt-1 text-[13px] text-crust-400">
-            OpenAI-compatible inference, verifiable on-chain. Balance and usage live below.
+            OpenAI-compatible inference, verifiable on-chain. Account usage below is preview data until customer APIs are public-live.
           </p>
         </div>
       </header>
 
       <div className="grid grid-cols-4 gap-3">
-        <StatCard label="CUC balance" value="$ 482.10" />
-        <StatCard label="Spend · 30d" value="$ 117.40" delta="+12.4%" deltaTone="warn" />
-        <StatCard label="Requests · 30d" value="1,204,802" deltaLabel="tokens" />
+        <StatCard label="Preview CUC balance" value="$ 482.10" />
+        <StatCard label="Preview spend · 30d" value="$ 117.40" delta="+12.4%" deltaTone="warn" />
+        <StatCard label="Preview requests · 30d" value="1,204,802" deltaLabel="tokens" />
         <StatCard label="Replay disagreement" value="0.02%" deltaTone="success" />
       </div>
 
       <div className="grid grid-cols-3 gap-4">
-        <Card className="col-span-2" title="Recent calls">
+        <Card className="col-span-2" title="Recent calls · preview data">
           <table className="w-full text-[12px]">
             <thead>
               <tr className="border-b border-crust-800 text-left font-mono text-[10.5px] uppercase tracking-wider text-crust-500">

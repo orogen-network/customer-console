@@ -17,14 +17,14 @@ function Billing() {
       <header>
         <h1 className="text-title font-semibold text-crust-100">Billing</h1>
         <p className="mt-1 text-[13px] text-crust-400">
-          Top up CUC credits. CUC is non-transferable, used to pay the gateway for inference.
+          Top up CUC credits once billing is public-live. The test edge shows the intended rails with actions disabled.
         </p>
       </header>
 
       <div className="grid grid-cols-3 gap-4">
-        <Card title="Current balance" className="col-span-1">
+        <Card title="Preview balance" className="col-span-1">
           <div className="font-display text-display-lg text-crust-100">$ 482.10</div>
-          <div className="font-mono text-[11px] uppercase tracking-wider text-crust-500">CUC available</div>
+          <div className="font-mono text-[11px] uppercase tracking-wider text-crust-500">representative CUC</div>
         </Card>
 
         <Card className="col-span-2">
@@ -60,17 +60,17 @@ function Billing() {
               <span className="font-mono text-crust-100">$ {(amount * 1.0).toFixed(2)} CUC</span>
             </div>
 
-            {rail === "card" && <Btn variant="primary" size="lg" className="w-full justify-center">Pay with Stripe ↗</Btn>}
+            {rail === "card" && <Btn variant="primary" size="lg" disabled className="w-full justify-center">Stripe unavailable on test edge</Btn>}
             {rail === "crypto" && (
               <>
-                <p className="text-[12px] text-crust-400">Send the equivalent in USDC / ETH / BTC. We use Coinbase Commerce.</p>
-                <Btn variant="primary" size="lg" className="w-full justify-center">Open crypto checkout ↗</Btn>
+                <p className="text-[12px] text-crust-400">Coinbase Commerce / Transak rails are not public-live on this test edge.</p>
+                <Btn variant="primary" size="lg" disabled className="w-full justify-center">Crypto checkout unavailable</Btn>
               </>
             )}
             {rail === "burn" && (
               <>
                 <p className="text-[12px] text-crust-400">
-                  Burn OROG through <span className="font-mono">gateway-burn-engine</span>. Live BME rate fetched from chain.
+                  Burn OROG through <span className="font-mono">gateway-burn-engine</span> once the burn service is public-live.
                 </p>
                 <Code>
 {`wallet-cli burn \\
@@ -86,7 +86,7 @@ function Billing() {
       </div>
 
       <Card title="Recent invoices">
-        <table className="w-full text-[12px]">
+        <table className="w-full text-[12px]" aria-label="Preview invoices">
           <thead>
             <tr className="border-b border-crust-800 text-left font-mono text-[10.5px] uppercase tracking-wider text-crust-500">
               <th className="py-2 font-medium">date</th>

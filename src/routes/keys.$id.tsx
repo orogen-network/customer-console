@@ -20,18 +20,18 @@ function KeyDetail() {
           <h1 className="text-title font-semibold text-crust-100">{id}</h1>
           <div className="mt-1 flex items-center gap-3 text-[12px] text-crust-400">
             <HashChip value="orog_live_a4f2" lead={9} tail={4} />
-            <Badge tone="success" dot>active</Badge>
-            <span>created 2026-04-12</span>
+            <Badge tone="warn" dot>preview only</Badge>
+            <span>representative key state</span>
           </div>
         </div>
         <div className="flex gap-2">
-          <Btn variant="secondary">Rotate</Btn>
-          <Btn variant="danger">Revoke</Btn>
+          <Btn variant="secondary" disabled>Rotate unavailable</Btn>
+          <Btn variant="danger" disabled>Revoke unavailable</Btn>
         </div>
       </header>
 
       <div className="grid grid-cols-3 gap-4">
-        <Card title="Spend cap" className="col-span-2">
+        <Card title="Preview spend cap" className="col-span-2">
           <div className="flex items-baseline justify-between">
             <span className="font-mono text-[28px] text-crust-100">$ 234.51 / 500.00</span>
             <span className="font-mono text-[11px] text-crust-500">monthly</span>
@@ -40,16 +40,16 @@ function KeyDetail() {
             <div className="h-1.5 rounded-full bg-crust-600" style={{ width: "47%" }} />
           </div>
         </Card>
-        <Card title="Scope">
+        <Card title="Preview scope">
           <div className="flex flex-wrap gap-1.5">
             <Badge tone="accent">frontier</Badge>
             <Badge tone="accent">dc-premium</Badge>
           </div>
-          <Btn className="mt-3" size="sm" variant="ghost">Edit scope</Btn>
+          <Btn className="mt-3" size="sm" variant="ghost" disabled>Edit unavailable</Btn>
         </Card>
       </div>
 
-      <Card title="Recent IPs">
+      <Card title="Recent IPs · preview data">
         <table className="w-full text-[12px]">
           <thead>
             <tr className="border-b border-crust-800 text-left font-mono text-[10.5px] uppercase tracking-wider text-crust-500">

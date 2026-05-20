@@ -4,7 +4,7 @@
 
 import { Link, useRouterState } from "@tanstack/react-router";
 import { type ReactNode, useState } from "react";
-import { OrogenMark, StatusDot } from "@/components/primitives";
+import { Badge, OrogenMark, StatusDot } from "@/components/primitives";
 
 interface NavItem {
   to: string;
@@ -83,6 +83,7 @@ export function AppShell({ children }: { children: ReactNode }) {
 
       <main className="flex flex-1 flex-col">
         <Topbar />
+        <PreviewNotice />
         <div className="flex-1 px-8 py-6">{children}</div>
       </main>
     </div>
@@ -99,12 +100,24 @@ function Topbar() {
         </button>
       </div>
       <div className="flex items-center gap-4 text-[12px]">
-        <span className="font-mono text-crust-500">CUC balance</span>
-        <span className="font-mono text-crust-100">$ 482.10</span>
+        <span className="font-mono text-crust-500">test edge</span>
+        <Badge tone="warn" dot>account APIs unavailable</Badge>
         <div className="ml-2 flex size-7 items-center justify-center rounded-full border border-crust-800 bg-crust-850 text-[11px] font-medium text-crust-200">
           JS
         </div>
       </div>
     </header>
+  );
+}
+
+function PreviewNotice() {
+  return (
+    <div className="border-b border-magma-500/30 bg-magma-500/10 px-8 py-2.5 text-[12px] text-magma-100">
+      <span className="font-mono uppercase tracking-wider text-magma-300">test preview</span>
+      <span className="ml-2 text-crust-300">
+        Gateway, chain RPC, and indexer are reachable on the test edge. Billing, burn, auth, keys,
+        and account usage are not public-live; representative rows are labeled as preview data.
+      </span>
+    </div>
   );
 }

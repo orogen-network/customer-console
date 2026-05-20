@@ -9,10 +9,10 @@ const ROLES = ["Owner", "Billing", "Developer", "Read-only"] as const;
 type Role = (typeof ROLES)[number];
 
 const MEMBERS: Array<{ name: string; email: string; role: Role; lastSeen: string }> = [
-  { name: "Jon Schemoul", email: "jon@acme.ai", role: "Owner", lastSeen: "now" },
-  { name: "Ada Lovelace", email: "ada@acme.ai", role: "Billing", lastSeen: "2 days ago" },
-  { name: "Grace Hopper", email: "grace@acme.ai", role: "Developer", lastSeen: "12 min ago" },
-  { name: "Margaret Hamilton", email: "margaret@acme.ai", role: "Read-only", lastSeen: "3 weeks ago" },
+  { name: "Workspace Owner", email: "owner@example.test", role: "Owner", lastSeen: "now" },
+  { name: "Billing Admin", email: "billing@example.test", role: "Billing", lastSeen: "2 days ago" },
+  { name: "API Developer", email: "developer@example.test", role: "Developer", lastSeen: "12 min ago" },
+  { name: "Audit Viewer", email: "viewer@example.test", role: "Read-only", lastSeen: "3 weeks ago" },
 ];
 
 function Team() {

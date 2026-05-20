@@ -48,13 +48,13 @@ function KeysList() {
         <div>
           <h1 className="text-title font-semibold text-crust-100">API keys</h1>
           <p className="mt-1 text-[13px] text-crust-400">
-            Bearer tokens accepted by <span className="font-mono">gateway.orogen.network</span>. Scope each key to model tiers and spending caps. Secret values are shown once at creation.
+            Bearer tokens are accepted by <span className="font-mono">gateway.orogen.network</span> once account APIs are public-live. Rows below are preview data.
           </p>
         </div>
-        <Btn variant="primary">Create key</Btn>
+        <Btn variant="primary" disabled>Create key unavailable</Btn>
       </header>
 
-      <Card>
+      <Card title="Preview keys">
         <table className="w-full text-[12px]">
           <thead>
             <tr className="border-b border-crust-800 text-left font-mono text-[10.5px] uppercase tracking-wider text-crust-500">
@@ -102,9 +102,9 @@ function KeysList() {
                   <td className="py-2.5"><span className="font-mono text-[11px] text-crust-400">{k.lastIp}</span></td>
                   <td className="py-2.5">
                     {k.status === "active" ? (
-                      <Badge tone="success" dot>active</Badge>
+                      <Badge tone="warn" dot>preview</Badge>
                     ) : (
-                      <Badge tone="mute">paused</Badge>
+                      <Badge tone="mute">preview paused</Badge>
                     )}
                   </td>
                 </tr>

@@ -31,7 +31,7 @@ function Onboarding() {
     <div className="mx-auto grid max-w-[1100px] grid-cols-[260px_1fr] gap-10 py-8">
       <aside>
         <h2 className="font-display text-[26px] text-crust-100">Welcome to Orogen</h2>
-        <p className="mt-1 text-[13px] text-crust-400">Working API call in under 5 minutes.</p>
+        <p className="mt-1 text-[13px] text-crust-400">Preview flow; account actions are disabled on the test edge.</p>
         <ol className="mt-6 space-y-1">
           {STEPS.map((s, i) => {
             const done = i < stepIdx;
@@ -86,7 +86,7 @@ function SignInStep({ onDone }: { onDone: () => void }) {
   return (
     <>
       <h3 className="text-title font-semibold text-crust-100">Sign in</h3>
-      <p className="mt-1 text-[13px] text-crust-400">Wallet (sr25519) or email magic link — both bind to one org.</p>
+      <p className="mt-1 text-[13px] text-crust-400">Wallet (sr25519) or email magic link will bind to one org when auth is public-live.</p>
       <div className="mt-5 flex border-b border-crust-800">
         {(["wallet", "email"] as const).map((m) => (
           <button
@@ -126,7 +126,7 @@ function TopUpStep({ onDone }: { onDone: () => void }) {
   return (
     <>
       <h3 className="text-title font-semibold text-crust-100">Add credit</h3>
-      <p className="mt-1 text-[13px] text-crust-400">$20 minimum to make your first call. Stripe handles the card; receipt lands on your dashboard.</p>
+      <p className="mt-1 text-[13px] text-crust-400">Preview the credit step. Stripe, crypto, and burn rails are disabled on this test edge.</p>
       <div className="mt-5 grid grid-cols-3 gap-2">
         {[20, 50, 200].map((a) => (
           <button key={a} className="rounded-lg border border-crust-700 bg-crust-1000 py-3 text-crust-100 hover:border-magma-500">
@@ -136,9 +136,9 @@ function TopUpStep({ onDone }: { onDone: () => void }) {
         ))}
       </div>
       <p className="mt-3 text-[11.5px] text-crust-500">
-        BME rate live from <span className="font-mono">gateway-burn-engine</span>. Crypto and wallet-burn rails available under Billing later.
+        Billing and burn rails are unavailable on this test edge.
       </p>
-      <StepFooter onDone={onDone} label="Pay with Stripe ↗" />
+      <StepFooter onDone={onDone} label="Preview next step" />
     </>
   );
 }
@@ -148,7 +148,7 @@ function MintStep({ onDone }: { onDone: () => void }) {
   return (
     <>
       <h3 className="text-title font-semibold text-crust-100">Mint your first key</h3>
-      <p className="mt-1 text-[13px] text-crust-400">Shown once — we never reveal this value again. Copy it now.</p>
+      <p className="mt-1 text-[13px] text-crust-400">Representative one-time reveal. Real key minting is disabled on the test edge.</p>
       <div className="mt-5">
         <Code>{`orog_live_4Xq2_aR9k_8mE3_pV7T_xL5N_b1Cz_nF6dJq_m93Z`}</Code>
       </div>
@@ -169,7 +169,7 @@ function CurlStep({ onDone }: { onDone: () => void }) {
   return (
     <>
       <h3 className="text-title font-semibold text-crust-100">Make your first call</h3>
-      <p className="mt-1 text-[13px] text-crust-400">Drop-in OpenAI-compatible. Your key is pre-filled.</p>
+      <p className="mt-1 text-[13px] text-crust-400">Drop-in OpenAI-compatible request shape. The key below is not a live credential.</p>
       <div className="mt-5 space-y-3">
         <Code>{`curl https://gateway.orogen.network/v1/chat/completions \\
   -H "Authorization: Bearer orog_live_4Xq2...m93Z" \\
@@ -196,9 +196,9 @@ function DoneStep({ onDone }: { onDone: () => void }) {
   return (
     <>
       <h3 className="text-title font-semibold text-crust-100">You&apos;re set</h3>
-      <p className="mt-1 text-[13px] text-crust-400">Receipt verified. Operator pubkey known. Replay verdict: clean.</p>
+      <p className="mt-1 text-[13px] text-crust-400">Preview complete. Live receipts appear after account services are enabled.</p>
       <div className="mt-5">
-        <Badge tone="success" dot>verifiable inference active</Badge>
+        <Badge tone="warn" dot>test preview only</Badge>
       </div>
       <StepFooter onDone={onDone} label="Open dashboard →" />
     </>
