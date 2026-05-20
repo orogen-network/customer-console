@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-feature-settings: "cv02", "cv03", "cv04", "ss01";
+}
+
+::selection {
+  background: rgba(245, 158, 11, 0.35);
+  color: #fff;
+}
+
+.font-mono {
+  font-feature-settings: "zero", "ss01";
+  font-variant-ligatures: none;
+}
