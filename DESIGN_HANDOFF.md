@@ -2,7 +2,7 @@
 
 The full design handoff lives under [`design-reference/`](./design-reference/). The bundled README inside that directory is authoritative for tokens, atom specs, screen behaviour, and v0 acceptance criteria.
 
-The high-fidelity JSX previews in `design-reference/design/src/*.jsx` are **not lifted directly** into production. They were built in inline-JSX for fast preview; our production code recreates them in Tailwind + TypeScript per the Orogen split-repo stack.
+The high-fidelity JSX previews in `design-reference/design/src/*.jsx` are **not lifted directly** into production. They were built in inline-JSX for fast preview; our production code recreates them in Tailwind + TypeScript.
 
 ## Preview the design locally
 
@@ -35,8 +35,8 @@ Per the design handoff README:
 - **Colors, type scale, spacing, and component states are final.**
 - **Onboarding interactions** (step nav, auth tabs, OTP entry, key reveal, streaming curl) reflect intended behaviour — match them.
 - **Receipt envelope** must stay calm in clean/sampled-clean. The evidence rail expands **below** the envelope on mismatch; the envelope itself never turns red.
-- **Upstream unavailable** treatment (subsidy-dashboard pattern) — never fabricate state.
+- **Upstream unavailable** treatment — when a backing service is unreachable, label it as such. Never fabricate state.
 
 ## Tokens — single source of truth
 
-Tailwind config (`tailwind.config.mjs`) is the source. The `crust` / `magma` / `crystal` palettes match `landing-site/tailwind.config.mjs`; the additions (`crust-1000`, `crust-850`, `crust-50`, `ruby`, `sky`, `violet`, `Instrument Serif` display family) follow the handoff's "extra steps" — the landing-site config will be brought up to parity in a later sweep.
+Tailwind config (`tailwind.config.mjs`) is the source. The `crust` / `magma` / `crystal` palettes match the Orogen brand palette; the additions (`crust-1000`, `crust-850`, `crust-50`, `ruby`, `sky`, `violet`, `Instrument Serif` display family) follow the handoff's extra steps.

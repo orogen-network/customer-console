@@ -2,7 +2,7 @@
 
 Authenticated customer console for `app.orogen.network` — keys, credits, usage, receipts.
 
-Sibling repo. Per the Orogen split-repo policy, this lives under `~/repos/orogen-network/` and ships as its own GitHub repo. The console is the customer-facing product surface that pairs with `gateway-router` (API), `billing-bridge` (Stripe / Coinbase / Transak), `gateway-burn-engine` (OROG → CUC), and `chain-indexer` (usage history).
+The console is the customer-facing product surface that pairs with `gateway-router` (API), `billing-bridge` (Stripe / Coinbase / Transak), `gateway-burn-engine` (OROG → CUC), and `chain-indexer` (usage history).
 
 ## Stack
 
@@ -37,7 +37,7 @@ By default in dev mode the console talks to the live `forge-rpc.orogen.network` 
 
 ## Upstream-unavailable pattern
 
-Every panel that depends on a live service surfaces `{ status: 'unavailable', reason }` instead of stale data when the upstream is unreachable. This mirrors the subsidy-dashboard treatment that landed in stream C. **Never fabricate green data.**
+Every panel that depends on a live service surfaces `{ status: 'unavailable', reason }` instead of stale data when the upstream is unreachable. **Never fabricate green data.**
 
 ## Design
 
