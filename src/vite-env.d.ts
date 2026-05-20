@@ -9,6 +9,7 @@ interface ImportMetaEnv {
   readonly VITE_OROGEN_INDEXER_URL?: string;
   readonly VITE_OROGEN_FORGE_RPC_URL?: string;
   readonly VITE_OROGEN_ATTESTATION_EXPLORER_URL?: string;
+  readonly VITE_OROGEN_TEST_PREVIEW?: string;
 }
 
 interface ImportMeta {

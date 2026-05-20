@@ -26,7 +26,9 @@ function Usage() {
       <header className="flex items-end justify-between">
         <div>
           <h1 className="text-title font-semibold text-crust-100">Usage</h1>
-          <p className="mt-1 text-[13px] text-crust-400">Spend, latency, and replay verdicts across your requests.</p>
+          <p className="mt-1 text-[13px] text-crust-400">
+            Representative spend, latency, and replay verdicts. Live account usage is unavailable on the test edge.
+          </p>
         </div>
         <div className="flex gap-1.5 rounded-md border border-crust-800 bg-crust-900 p-1 text-[12px]">
           {(["24h", "7d", "30d", "custom"] as const).map((w, i) => (
@@ -41,21 +43,21 @@ function Usage() {
       </header>
 
       <div className="grid grid-cols-3 gap-4">
-        <Card title="Spend (7d)">
+        <Card title="Preview spend (7d)">
           <div className="font-mono text-[28px] text-crust-100">$ 27.91</div>
           <div className="font-mono text-[11px] text-crystal-400">−4.2%</div>
         </Card>
-        <Card title="Tokens (7d)">
+        <Card title="Preview tokens (7d)">
           <div className="font-mono text-[28px] text-crust-100">281,402</div>
           <div className="font-mono text-[11px] text-crust-500">in / out 198K / 83K</div>
         </Card>
-        <Card title="Latency (7d)">
+        <Card title="Preview latency (7d)">
           <div className="font-mono text-[20px] text-crust-100">184 ms <span className="text-crust-500">/</span> 612 ms</div>
           <div className="font-mono text-[11px] text-crust-500">p50 / p95</div>
         </Card>
       </div>
 
-      <Card title="Replay verdict heatmap" action={<div className="flex gap-3 text-[11px] font-mono"><span className="flex items-center gap-1"><i className="size-2 rounded-sm bg-crystal-500/70" /> clean</span><span className="flex items-center gap-1"><i className="size-2 rounded-sm bg-magma-500/70" /> sampled</span><span className="flex items-center gap-1"><i className="size-2 rounded-sm bg-ruby-500/80" /> mismatch</span></div>}>
+      <Card title="Replay verdict heatmap · preview data" action={<div className="flex gap-3 text-[11px] font-mono"><span className="flex items-center gap-1"><i className="size-2 rounded-sm bg-crystal-500/70" /> clean</span><span className="flex items-center gap-1"><i className="size-2 rounded-sm bg-magma-500/70" /> sampled</span><span className="flex items-center gap-1"><i className="size-2 rounded-sm bg-ruby-500/80" /> mismatch</span></div>}>
         <div className="grid grid-cols-[repeat(50,minmax(0,1fr))] gap-[3px]">
           {cells.map((v, i) => (
             <div
@@ -73,7 +75,7 @@ function Usage() {
         </div>
       </Card>
 
-      <Card title="Request log">
+      <Card title="Request log · preview data">
         <table className="w-full text-[12px]">
           <thead>
             <tr className="border-b border-crust-800 text-left font-mono text-[10.5px] uppercase tracking-wider text-crust-500">

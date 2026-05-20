@@ -21,6 +21,19 @@ describe("config", () => {
     await expect(import("../config")).rejects.toThrow(/refusing to start in production/);
   });
 
+  it("allows explicit test-edge preview production builds without account upstream URLs", async () => {
+    vi.stubEnv("PROD", true);
+    vi.stubEnv("VITE_OROGEN_TEST_PREVIEW", "true");
+    vi.stubEnv("VITE_OROGEN_GATEWAY_URL", "https://gw.example/");
+    vi.stubEnv("VITE_OROGEN_BILLING_BRIDGE_URL", "");
+    vi.stubEnv("VITE_OROGEN_BURN_ENGINE_URL", "");
+    vi.stubEnv("VITE_OROGEN_INDEXER_URL", "https://ix.example/");
+    const mod = await import("../config");
+    expect(mod.config.testPreview).toBe(true);
+    expect(mod.config.billingBridgeUrl).toBe("");
+    expect(mod.config.burnEngineUrl).toBe("");
+  });
+
   it("accepts when all required URLs are present in production", async () => {
     vi.stubEnv("PROD", true);
     vi.stubEnv("VITE_OROGEN_GATEWAY_URL", "https://gw.example/");

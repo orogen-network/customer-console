@@ -32,8 +32,13 @@ By default in dev mode the console talks to the live `forge-rpc.orogen.network` 
 | `VITE_OROGEN_INDEXER_URL` | chain-indexer GraphQL (default: `https://indexer.orogen.network/graphql`) |
 | `VITE_OROGEN_FORGE_RPC_URL` | Substrate JSON-RPC (default: `https://forge-rpc.orogen.network`) |
 | `VITE_OROGEN_ATTESTATION_EXPLORER_URL` | Receipt deep-dive (default: `https://attestation.orogen.network`) |
+| `VITE_OROGEN_TEST_PREVIEW` | Set to `true` only for the public test-edge preview where account/billing/burn APIs are intentionally unavailable |
 
-**Production builds refuse to start** without the first four. The other two have safe defaults.
+Full production builds refuse to start without gateway, billing, burn, and indexer URLs. Test-edge preview production builds must set `VITE_OROGEN_TEST_PREVIEW=true`; in that mode only gateway and indexer are required and account/billing/burn UI must remain labeled unavailable.
+
+## Current test-edge preview
+
+The deployed `app.orogen.network` surface is a test-edge preview. Gateway, chain RPC, and indexer are public, but auth, account usage, key creation, billing, and burn rails are not public-live. The UI intentionally labels representative rows as preview data and disables account-changing actions.
 
 ## Upstream-unavailable pattern
 
@@ -43,12 +48,12 @@ Every panel that depends on a live service surfaces `{ status: 'unavailable', re
 
 See `design-reference/` for the high-fidelity design handoff (README + JSX previews). The implementation here recreates those screens in our actual stack — do not lift the JSX directly. See [DESIGN_HANDOFF.md](./DESIGN_HANDOFF.md) for the map from design files to source files.
 
-## v0 acceptance
+## v0 target acceptance
 
 - A new visitor can sign in → buy $20 of credits → mint one API key → run a curl call → see the call in the log → open the receipt → see operator pubkey + attestation summary, **within 5 minutes**.
 - Stripe success redirect from `billing-bridge` lands on `/billing/checkout/stripe/return` showing the credited amount.
 - Every upstream-unavailable case is labeled, not faked.
-- Production refuses to start without all four required env vars.
+- Full production refuses to start without all four required upstream env vars.
 - API key secret is shown exactly once.
 - Receipt verdict states render correctly: clean · sampled-clean · mismatch.
 

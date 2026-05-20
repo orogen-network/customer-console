@@ -1,8 +1,8 @@
 // Customer console runtime configuration.
 //
-// Production builds refuse to start unless all four upstream URLs are present.
-// Subsidy-dashboard pattern: never fake green data — but we have to know who
-// to ask before we can label a panel "unavailable" honestly.
+// Full production builds refuse to start unless all account upstream URLs are
+// present. Test-edge preview builds are explicit and keep unavailable account
+// upstreams empty instead of pointing them at unrelated services.
 
 export interface RuntimeConfig {
   gatewayUrl: string;
@@ -11,12 +11,18 @@ export interface RuntimeConfig {
   indexerUrl: string;
   forgeRpcUrl: string;
   attestationExplorerUrl: string;
+  testPreview: boolean;
 }
 
-const REQUIRED_PROD_KEYS: ReadonlyArray<keyof RuntimeConfig> = [
+const REQUIRED_FULL_PROD_KEYS: ReadonlyArray<keyof RuntimeConfig> = [
   "gatewayUrl",
   "billingBridgeUrl",
   "burnEngineUrl",
+  "indexerUrl",
+];
+
+const REQUIRED_PREVIEW_KEYS: ReadonlyArray<keyof RuntimeConfig> = [
+  "gatewayUrl",
   "indexerUrl",
 ];
 
@@ -34,18 +40,25 @@ function readEnv(): RuntimeConfig {
     attestationExplorerUrl:
       import.meta.env.VITE_OROGEN_ATTESTATION_EXPLORER_URL ??
       "https://attestation.orogen.network",
+    testPreview: import.meta.env.VITE_OROGEN_TEST_PREVIEW === "true",
   };
 }
 
 export function loadConfig(): RuntimeConfig {
   const cfg = readEnv();
   if (import.meta.env.PROD) {
-    const missing = REQUIRED_PROD_KEYS.filter((k) => !cfg[k]);
+    const required = cfg.testPreview ? REQUIRED_PREVIEW_KEYS : REQUIRED_FULL_PROD_KEYS;
+    const missing = required.filter((k) => !cfg[k]);
     if (missing.length > 0) {
       throw new Error(
         `customer-console: refusing to start in production without ${missing
           .map((k) => `VITE_OROGEN_${k.replace(/Url$/, "").replace(/([A-Z])/g, "_$1").toUpperCase()}_URL`)
           .join(", ")}`,
+      );
+    }
+    if (!cfg.testPreview && (!cfg.billingBridgeUrl || !cfg.burnEngineUrl)) {
+      throw new Error(
+        "customer-console: full production requires billing and burn upstream URLs; set VITE_OROGEN_TEST_PREVIEW=true only for the public test-edge preview",
       );
     }
   }
