@@ -66,12 +66,12 @@ function ScreenBilling({ method = 'card', accent = Accent.magma }) {
                 { label:'', w:'60px', align:'right', cell: ()=> <Icon.download color={C.crust[400]}/> },
               ]}
               rows={[
-                { id:'in_8x_a4Kp9', date:'May 18, 2026', rail:'card', amount:'$200.00', credits:'20,000', status:'paid' },
-                { id:'in_8x_9rNz2', date:'May 02, 2026', rail:'crypto', amount:'$500.00', credits:'50,600', status:'paid' },
-                { id:'in_8x_8mLqW', date:'Apr 18, 2026', rail:'burn', amount:'18.4 OROG', credits:'19,504', status:'paid' },
-                { id:'in_8x_7kJpV', date:'Apr 02, 2026', rail:'card', amount:'$200.00', credits:'20,000', status:'paid' },
-                { id:'in_8x_6hMnT', date:'Mar 22, 2026', rail:'card', amount:'$50.00', credits:'5,000', status:'refunded' },
-                { id:'in_8x_5gKlS', date:'Mar 14, 2026', rail:'card', amount:'$20.00', credits:'2,000', status:'paid' },
+                { id:'in_8x_a4Kp9', date:'May 18, 2026', rail:'card preview', amount:'preview', credits:'20,000', status:'disabled' },
+                { id:'in_8x_9rNz2', date:'May 02, 2026', rail:'crypto preview', amount:'preview', credits:'50,600', status:'disabled' },
+                { id:'in_8x_8mLqW', date:'Apr 18, 2026', rail:'burn preview', amount:'preview', credits:'19,504', status:'disabled' },
+                { id:'in_8x_7kJpV', date:'Apr 02, 2026', rail:'card preview', amount:'preview', credits:'20,000', status:'disabled' },
+                { id:'in_8x_6hMnT', date:'Mar 22, 2026', rail:'card preview', amount:'preview', credits:'5,000', status:'disabled' },
+                { id:'in_8x_5gKlS', date:'Mar 14, 2026', rail:'card preview', amount:'preview', credits:'2,000', status:'disabled' },
               ]}
             />
           </Panel>
@@ -302,8 +302,8 @@ function BurnRail({ accent }) {
           </div>
         </div>
         <Notice tone="info" icon={<Icon.info/>}
-          title="Burn is irreversible."
-          body="OROG → CUC permanently removes tokens from supply via gateway-burn-engine. Quote held for 60s."
+          title="Burn preview."
+          body="Gateway-burn-engine wiring is shown as a disabled preview until burn APIs are available."
           style={{ marginTop:10 }}/>
       </div>
 

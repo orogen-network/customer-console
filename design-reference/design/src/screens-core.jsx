@@ -243,7 +243,7 @@ function ScreenKeys({ accent = Accent.magma }) {
           <Tabs
             items={[
               { id:'all', label:'All keys', count:4 },
-              { id:'prod', label:'Production', count:2 },
+              { id:'preview', label:'Preview', count:2 },
               { id:'test', label:'Test', count:2 },
               { id:'revoked', label:'Revoked', count:1 },
             ]}
@@ -556,14 +556,14 @@ function ScreenUsage({ accent = Accent.magma }) {
               { label:'Cost', w:'90px', align:'right', cell: r=> <Mono size={11.5} color={r.cost==='—'?C.crust[500]:C.crust[100]}>{r.cost}</Mono> },
             ]}
             rows={[
-              { time:'09:42:18', id:'req_8x3qZ4MnL2', key:'production', model:'llama-3.1-70b-instr', toks:'1,418 → 612', lat:'824 ms', v:'clean', cost:'4.62¢' },
-              { time:'09:42:11', id:'req_8x3qZ3kY1q', key:'production', model:'qwen-2.5-32b', toks:'820 → 1,902', lat:'1,480 ms', v:'clean', cost:'2.91¢' },
+              { time:'09:42:18', id:'req_8x3qZ4MnL2', key:'preview', model:'llama-3.1-70b-instr', toks:'1,418 → 612', lat:'824 ms', v:'clean', cost:'preview' },
+              { time:'09:42:11', id:'req_8x3qZ3kY1q', key:'preview', model:'qwen-2.5-32b', toks:'820 → 1,902', lat:'1,480 ms', v:'clean', cost:'preview' },
               { time:'09:42:04', id:'req_8x3qZ2pW9d', key:'staging', model:'llama-3.1-70b-instr', toks:'4,200 → 211', lat:'920 ms', v:'sampled', cost:'8.14¢' },
-              { time:'09:41:58', id:'req_8x3qZ1zB4r', key:'production', model:'mistral-large-2', toks:'382 → 1,180', lat:'680 ms', v:'clean', cost:'3.20¢' },
-              { time:'09:41:51', id:'req_8x3qZ0qA8w', key:'production', model:'llama-3.1-8b', toks:'940 → 408', lat:'412 ms', v:'clean', cost:'0.61¢' },
+              { time:'09:41:58', id:'req_8x3qZ1zB4r', key:'preview', model:'mistral-large-2', toks:'382 → 1,180', lat:'680 ms', v:'clean', cost:'preview' },
+              { time:'09:41:51', id:'req_8x3qZ0qA8w', key:'preview', model:'llama-3.1-8b', toks:'940 → 408', lat:'412 ms', v:'clean', cost:'preview' },
               { time:'09:41:42', id:'req_8x3qY9tR1m', key:'eval · spot', model:'deepseek-coder', toks:'2,108 → 1,420', lat:'1,840 ms', v:'mismatch', cost:'—' },
-              { time:'09:41:35', id:'req_8x3qY8wE0c', key:'production', model:'llama-3.1-70b-instr', toks:'612 → 720', lat:'1,120 ms', v:'clean', cost:'2.84¢' },
-              { time:'09:41:29', id:'req_8x3qY7sP4v', key:'production', model:'qwen-2.5-32b', toks:'1,808 → 902', lat:'1,240 ms', v:'clean', cost:'4.18¢' },
+              { time:'09:41:35', id:'req_8x3qY8wE0c', key:'preview', model:'llama-3.1-70b-instr', toks:'612 → 720', lat:'1,120 ms', v:'clean', cost:'preview' },
+              { time:'09:41:29', id:'req_8x3qY7sP4v', key:'preview', model:'qwen-2.5-32b', toks:'1,808 → 902', lat:'1,240 ms', v:'clean', cost:'preview' },
               { time:'09:41:21', id:'req_8x3qY6jQ7n', key:'ci · readonly', model:'llama-3.1-8b', toks:'140 → 88', lat:'310 ms', v:'clean', cost:'0.12¢' },
             ]}
           />
@@ -581,7 +581,7 @@ function ScreenReceipt({ verdict = 'clean', receiptVariant = 'envelope', accent 
     id: 'req_8x3qZ4MnL2',
     time: '2026-05-20 09:42:18.142 UTC',
     model: 'llama-3.1-70b-instr',
-    key: 'production',
+    key: 'preview',
   };
   const receipt = {
     serial: 'OR-2026.05.20-8X3QZ4',
