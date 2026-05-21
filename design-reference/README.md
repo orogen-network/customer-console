@@ -281,7 +281,7 @@ and a "Dismiss" affordance.
 
 ### 02.2 · API Keys (`/keys`)
 
-Table: name · masked preview (`orog_live_4Xq2…m93Z`) · scope chips (model
+Table: name · masked preview (`orog_test_4Xq2...m93Z`) · scope chips (model
 families + tier) · used-vs-cap progress · last-used timestamp · last-IP ·
 created date · status badge · row action (rotate / revoke / open).
 

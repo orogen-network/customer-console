@@ -19,7 +19,7 @@ function KeyDetail() {
         <div>
           <h1 className="text-title font-semibold text-crust-100">{id}</h1>
           <div className="mt-1 flex items-center gap-3 text-[12px] text-crust-400">
-            <HashChip value="orog_live_a4f2" lead={9} tail={4} />
+            <HashChip value="orog_test_a4f2" lead={9} tail={4} />
             <Badge tone="warn" dot>preview only</Badge>
             <span>representative key state</span>
           </div>

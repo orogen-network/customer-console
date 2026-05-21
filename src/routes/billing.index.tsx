@@ -17,7 +17,7 @@ function Billing() {
       <header>
         <h1 className="text-title font-semibold text-crust-100">Billing</h1>
         <p className="mt-1 text-[13px] text-crust-400">
-          Top up CUC credits once billing is public-live. The test edge shows the intended rails with actions disabled.
+          Top up CUC credits once billing APIs are available. The test edge shows the intended rails with actions disabled.
         </p>
       </header>
 
@@ -63,14 +63,14 @@ function Billing() {
             {rail === "card" && <Btn variant="primary" size="lg" disabled className="w-full justify-center">Stripe unavailable on test edge</Btn>}
             {rail === "crypto" && (
               <>
-                <p className="text-[12px] text-crust-400">Coinbase Commerce / Transak rails are not public-live on this test edge.</p>
+                <p className="text-[12px] text-crust-400">Coinbase Commerce / Transak rails are unavailable on this test edge.</p>
                 <Btn variant="primary" size="lg" disabled className="w-full justify-center">Crypto checkout unavailable</Btn>
               </>
             )}
             {rail === "burn" && (
               <>
                 <p className="text-[12px] text-crust-400">
-                  Burn OROG through <span className="font-mono">gateway-burn-engine</span> once the burn service is public-live.
+                  Burn OROG through <span className="font-mono">gateway-burn-engine</span> once the burn service is available.
                 </p>
                 <Code>
 {`wallet-cli burn \\
@@ -85,7 +85,7 @@ function Billing() {
         </Card>
       </div>
 
-      <Card title="Recent invoices">
+      <Card title="Preview invoices">
         <table className="w-full text-[12px]" aria-label="Preview invoices">
           <thead>
             <tr className="border-b border-crust-800 text-left font-mono text-[10.5px] uppercase tracking-wider text-crust-500">

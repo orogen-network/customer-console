@@ -67,7 +67,7 @@ function ScreenDashboard({ showQuest = false, accent = Accent.magma, density = '
               <div style={{ flex:1 }}>
                 <div className="mono" style={{ fontSize:10.5, color:accent.hex, letterSpacing:'0.12em', textTransform:'uppercase', marginBottom:4 }}>Welcome to Orogen</div>
                 <div style={{ fontSize:16, fontWeight:600, color:C.crust[100], marginBottom:3 }}>Run your first verified inference call</div>
-                <div style={{ fontSize:12.5, color:C.crust[400] }}>Your starter key <span className="mono" style={{ color:C.crust[200] }}>orog_live_4Xq…m93Z</span> is ready. Copy the curl and watch it land in your call log.</div>
+                <div style={{ fontSize:12.5, color:C.crust[400] }}>Your preview key <span className="mono" style={{ color:C.crust[200] }}>orog_test_4Xq...m93Z</span> is ready. Copy the curl and watch it land in your call log.</div>
               </div>
               <div style={{ display:'flex', alignItems:'center', gap:18 }}>
                 <div style={{ display:'flex', flexDirection:'column', gap:4 }}>
@@ -178,9 +178,9 @@ function ScreenDashboard({ showQuest = false, accent = Accent.magma, density = '
             <Panel eyebrow="KEYS" title="Key health" action={<Btn kind="ghost" size="sm">Manage</Btn>} padding={0}>
               <div style={{ padding:'4px 0' }}>
                 {[
-                  { name:'production', preview:'orog_live_4Xq…m93Z', cap:200, used:142, tone:'warn' },
-                  { name:'staging', preview:'orog_live_pK2…xQ8a', cap:50, used:8, tone:'success' },
-                  { name:'ci · readonly', preview:'orog_live_zR9…Lm4q', cap:10, used:0.4, tone:'neutral' },
+                  { name:'preview', preview:'orog_test_4Xq...m93Z', cap:200, used:142, tone:'warn' },
+                  { name:'staging', preview:'orog_test_pK2...xQ8a', cap:50, used:8, tone:'success' },
+                  { name:'ci · readonly', preview:'orog_test_zR9...Lm4q', cap:10, used:0.4, tone:'neutral' },
                 ].map((k,i)=>(
                   <div key={i} className="row" style={{ padding:'12px 18px', display:'flex', alignItems:'center', gap:12, borderBottom: i<2 ? `1px solid ${C.crust[850]}` : 'none' }}>
                     <StatusDot tone={k.tone} size={7}/>
@@ -295,10 +295,10 @@ function ScreenKeys({ accent = Accent.magma }) {
             )},
           ]}
           rows={[
-            { name:'production', preview:'orog_live_4Xq2WmKx…m93Z', scope:['llama','qwen','mistral','tier-A'], used:142, cap:200, lastUsed:'2 min ago', lastIp:'104.18.32.41', created:'Mar 14, 2026', status:'warn' },
-            { name:'staging', preview:'orog_live_pK2RdNQa…xQ8a', scope:['llama','qwen','tier-A'], used:8.2, cap:50, lastUsed:'3 hours ago', lastIp:'52.91.14.220', created:'Apr 02, 2026', status:'success' },
-            { name:'ci · readonly', preview:'orog_live_zR9wKpLm…Lm4q', scope:['llama-8b','tier-C'], used:0.4, cap:10, lastUsed:'Yesterday', lastIp:'140.82.114.4', created:'Apr 19, 2026', status:'success' },
-            { name:'eval · spot', preview:'orog_live_aP3xC8Bn…RrZ7', scope:['all', 'tier-A','tier-S'], used:22.6, cap:100, lastUsed:'12 min ago', lastIp:'130.211.40.118', created:'May 02, 2026', status:'success' },
+            { name:'preview', preview:'orog_test_4Xq2WmKx...m93Z', scope:['llama','qwen','mistral','tier-A'], used:142, cap:200, lastUsed:'2 min ago', lastIp:'2001:db8::104', created:'Mar 14, 2026', status:'warn' },
+            { name:'staging', preview:'orog_test_pK2RdNQa...xQ8a', scope:['llama','qwen','tier-A'], used:8.2, cap:50, lastUsed:'3 hours ago', lastIp:'2001:db8::52', created:'Apr 02, 2026', status:'success' },
+            { name:'ci · readonly', preview:'orog_test_zR9wKpLm...Lm4q', scope:['llama-8b','tier-C'], used:0.4, cap:10, lastUsed:'Yesterday', lastIp:'2001:db8::140', created:'Apr 19, 2026', status:'success' },
+            { name:'eval · spot', preview:'orog_test_aP3xC8Bn...RrZ7', scope:['all', 'tier-A','tier-S'], used:22.6, cap:100, lastUsed:'12 min ago', lastIp:'2001:db8::130', created:'May 02, 2026', status:'success' },
           ]}
         />
 
@@ -323,7 +323,7 @@ function ScreenKeyDetail({ accent = Accent.magma }) {
     <AppShell active="keys" user="KS"
       breadcrumbs={[
         { label:'API Keys' },
-        { label:'production', mono: true },
+        { label:'preview', mono: true },
       ]}
       actions={
         <>
@@ -336,13 +336,13 @@ function ScreenKeyDetail({ accent = Accent.magma }) {
           <div style={{ flex:1 }}>
             <div style={{ display:'flex', alignItems:'center', gap:10, marginBottom:6 }}>
               <StatusDot tone="warn" size={9} pulse/>
-              <h1 style={{ margin:0, fontSize:22, fontWeight:600, letterSpacing:'-0.02em', color:C.crust[100] }}>production</h1>
+              <h1 style={{ margin:0, fontSize:22, fontWeight:600, letterSpacing:'-0.02em', color:C.crust[100] }}>preview</h1>
               <Badge tone="warn" dot>71% of cap</Badge>
             </div>
             <div style={{ display:'flex', alignItems:'center', gap:14, marginTop:8 }}>
-              <HashChip value="orog_live_4Xq2WmKxR8tBV9qP3sDfm93Z" lead={20} tail={6} prefix="key" size={11}/>
+              <HashChip value="orog_test_4Xq2WmKxR8tBV9qP3sDfm93Z" lead={20} tail={6} prefix="key" size={11}/>
               <Mono size={11} color={C.crust[500]}>id <span style={{ color:C.crust[200] }}>key_kx8q19m</span></Mono>
-              <Mono size={11} color={C.crust[500]}>created <span style={{ color:C.crust[200] }}>Mar 14, 2026 09:42 UTC by katya@</span></Mono>
+              <Mono size={11} color={C.crust[500]}>created <span style={{ color:C.crust[200] }}>Mar 14, 2026 09:42 UTC by user@example.org</span></Mono>
             </div>
           </div>
           <div style={{ display:'flex', gap:14 }}>

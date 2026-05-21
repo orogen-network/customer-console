@@ -38,7 +38,7 @@ Full production builds refuse to start without gateway, billing, burn, and index
 
 ## Current test-edge preview
 
-The deployed `app.orogen.network` surface is a test-edge preview. Gateway, chain RPC, and indexer are public, but auth, account usage, key creation, billing, and burn rails are not public-live. The UI intentionally labels representative rows as preview data and disables account-changing actions.
+The deployed `app.orogen.network` surface is a test-edge preview. Gateway, chain RPC, and indexer are public, but auth, account usage, key creation, billing, and burn rails are unavailable. The UI intentionally labels representative rows as preview data and disables account-changing actions.
 
 ## Upstream-unavailable pattern
 

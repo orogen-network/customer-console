@@ -7,9 +7,9 @@ export const Route = createFileRoute("/keys/")({
 
 const SAMPLE_KEYS = [
   {
-    id: "prod-default",
-    name: "production-default",
-    preview: "orog_live_a4f2",
+    id: "preview-default",
+    name: "preview-default",
+    preview: "orog_test_a4f2",
     tiers: ["frontier", "dc-premium"],
     cap: 500,
     used: 234.51,
@@ -31,7 +31,7 @@ const SAMPLE_KEYS = [
   {
     id: "scratch-old",
     name: "scratch-rotated-2026-04",
-    preview: "orog_live_e7da",
+    preview: "orog_test_e7da",
     tiers: ["chat-rag"],
     cap: 25,
     used: 0,
@@ -48,7 +48,7 @@ function KeysList() {
         <div>
           <h1 className="text-title font-semibold text-crust-100">API keys</h1>
           <p className="mt-1 text-[13px] text-crust-400">
-            Bearer tokens are accepted by <span className="font-mono">gateway.orogen.network</span> once account APIs are public-live. Rows below are preview data.
+            Bearer token routing appears here once account APIs are available. Rows below are preview data.
           </p>
         </div>
         <Btn variant="primary" disabled>Create key unavailable</Btn>

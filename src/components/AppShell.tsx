@@ -116,7 +116,7 @@ function PreviewNotice() {
       <span className="font-mono uppercase tracking-wider text-magma-300">test preview</span>
       <span className="ml-2 text-crust-300">
         Gateway, chain RPC, and indexer are reachable on the test edge. Billing, burn, auth, keys,
-        and account usage are not public-live; representative rows are labeled as preview data.
+        and account usage are unavailable; representative rows are labeled as preview data.
       </span>
     </div>
   );

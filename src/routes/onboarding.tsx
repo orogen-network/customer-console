@@ -86,7 +86,7 @@ function SignInStep({ onDone }: { onDone: () => void }) {
   return (
     <>
       <h3 className="text-title font-semibold text-crust-100">Sign in</h3>
-      <p className="mt-1 text-[13px] text-crust-400">Wallet (sr25519) or email magic link will bind to one org when auth is public-live.</p>
+      <p className="mt-1 text-[13px] text-crust-400">Wallet (sr25519) or email magic link will bind to one org when auth is available.</p>
       <div className="mt-5 flex border-b border-crust-800">
         {(["wallet", "email"] as const).map((m) => (
           <button
@@ -150,7 +150,7 @@ function MintStep({ onDone }: { onDone: () => void }) {
       <h3 className="text-title font-semibold text-crust-100">Mint your first key</h3>
       <p className="mt-1 text-[13px] text-crust-400">Representative one-time reveal. Real key minting is disabled on the test edge.</p>
       <div className="mt-5">
-        <Code>{`orog_live_4Xq2_aR9k_8mE3_pV7T_xL5N_b1Cz_nF6dJq_m93Z`}</Code>
+        <Code>{`orog_test_4Xq2_aR9k_8mE3_pV7T_xL5N_b1Cz_nF6dJq_m93Z`}</Code>
       </div>
       <label className="mt-4 flex items-start gap-2 text-[12px] text-crust-300">
         <input type="checkbox" checked={copied} onChange={(e) => setCopied(e.target.checked)} className="mt-0.5" />
@@ -169,10 +169,10 @@ function CurlStep({ onDone }: { onDone: () => void }) {
   return (
     <>
       <h3 className="text-title font-semibold text-crust-100">Make your first call</h3>
-      <p className="mt-1 text-[13px] text-crust-400">Drop-in OpenAI-compatible request shape. The key below is not a live credential.</p>
+      <p className="mt-1 text-[13px] text-crust-400">Drop-in OpenAI-compatible request shape. This is preview syntax, not a live credential.</p>
       <div className="mt-5 space-y-3">
-        <Code>{`curl https://gateway.orogen.network/v1/chat/completions \\
-  -H "Authorization: Bearer orog_live_4Xq2...m93Z" \\
+        <Code>{`curl $OROGEN_GATEWAY_URL/v1/chat/completions \\
+  -H "Authorization: Bearer orog_test_4Xq2...m93Z" \\
   -H "Content-Type: application/json" \\
   -d '{"model":"orogen-frontier","messages":[{"role":"user","content":"hello"}]}'`}</Code>
         <Code>{`{
@@ -181,10 +181,10 @@ function CurlStep({ onDone }: { onDone: () => void }) {
   "model": "orogen-frontier",
   "choices": [{"message":{"role":"assistant","content":"Hi! ▌"}}],
   "orogen": { "receipt_id": "req_01J9XB4ZQ", "operator": "0xa290…ae10" }
-}`}</Code>
+        }`}</Code>
         <div className="flex items-center gap-2">
-          <Badge tone="warn" dot pulse>streaming</Badge>
-          <span className="text-[12px] text-crust-400">Response opens in <HashChip value="req_01J9XB4ZQ" lead={10} tail={3} /> on the dashboard.</span>
+          <Badge tone="warn" dot pulse>preview</Badge>
+          <span className="text-[12px] text-crust-400">Example receipt opens as <HashChip value="req_01J9XB4ZQ" lead={10} tail={3} /> in the dashboard preview.</span>
         </div>
       </div>
       <StepFooter onDone={onDone} />

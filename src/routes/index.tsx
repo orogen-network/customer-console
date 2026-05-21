@@ -60,7 +60,7 @@ function Dashboard() {
         <div>
           <h1 className="text-title font-semibold text-crust-100">Dashboard</h1>
           <p className="mt-1 text-[13px] text-crust-400">
-            OpenAI-compatible inference, verifiable on-chain. Account usage below is preview data until customer APIs are public-live.
+            OpenAI-compatible inference, verifiable on-chain. Account usage below is preview data until customer APIs are available.
           </p>
         </div>
       </header>
@@ -124,7 +124,7 @@ function Dashboard() {
               )}
               <div className="flex items-center gap-1.5">
                 <StatusDot tone="success" />
-                <span className="text-[12px] text-crust-400">forge testnet · live</span>
+                <span className="text-[12px] text-crust-400">forge testnet · preview data</span>
               </div>
             </div>
           ) : indexer.data?.status === "unavailable" ? (

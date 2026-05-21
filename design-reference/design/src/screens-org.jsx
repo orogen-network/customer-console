@@ -62,14 +62,14 @@ function ScreenTeam({ accent = Accent.magma }) {
               { label:'', w:'50px', align:'right', cell: ()=> <Icon.dots color={C.crust[400]}/> },
             ]}
             rows={[
-              { name:'Katya Surin', email:'katya@orbitallabs.dev', id:'wallet', role:'Owner', tfa:true, last:'now', seed:11, you:true },
-              { name:'Mateo Vargas', email:'mateo@orbitallabs.dev', id:'wallet', role:'Owner', tfa:true, last:'2h ago', seed:7 },
-              { name:'Jin Park', email:'jin@orbitallabs.dev', id:'email', role:'Developer', tfa:true, last:'12 min ago', seed:3 },
-              { name:'Lina Faye', email:'lina@orbitallabs.dev', id:'email', role:'Developer', tfa:false, last:'Yesterday', seed:15 },
-              { name:'Robin Akiyama', email:'robin@orbitallabs.dev', id:'wallet', role:'Billing', tfa:true, last:'3 days ago', seed:22 },
-              { name:'Sofia Petrov', email:'sofia@orbitallabs.dev', id:'email', role:'Read-only', tfa:true, last:'1 week ago', seed:4 },
-              { name:'Theo Adesina', email:'theo@orbitallabs.dev', id:'wallet', role:'Developer', tfa:true, last:'4 days ago', seed:18 },
-              { name:'Nadia Wu', email:'nadia@orbitallabs.dev', id:'email', role:'Read-only', tfa:false, last:'2 weeks ago', seed:9 },
+              { name:'Owner User', email:'owner@example.org', id:'wallet', role:'Owner', tfa:true, last:'now', seed:11, you:true },
+              { name:'Ops Admin', email:'ops-admin@example.org', id:'wallet', role:'Owner', tfa:true, last:'2h ago', seed:7 },
+              { name:'API Developer', email:'developer@example.org', id:'email', role:'Developer', tfa:true, last:'12 min ago', seed:3 },
+              { name:'Platform Engineer', email:'platform@example.org', id:'email', role:'Developer', tfa:false, last:'Yesterday', seed:15 },
+              { name:'Billing User', email:'billing@example.org', id:'wallet', role:'Billing', tfa:true, last:'3 days ago', seed:22 },
+              { name:'Audit Viewer', email:'audit@example.org', id:'email', role:'Read-only', tfa:true, last:'1 week ago', seed:4 },
+              { name:'SDK Maintainer', email:'sdk@example.org', id:'wallet', role:'Developer', tfa:true, last:'4 days ago', seed:18 },
+              { name:'Read Only User', email:'readonly@example.org', id:'email', role:'Read-only', tfa:false, last:'2 weeks ago', seed:9 },
             ]}
           />
 

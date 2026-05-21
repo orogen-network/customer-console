@@ -19,7 +19,7 @@ const H = 900;
 function OnboardingPrototype({ accent = Accent.magma, startStep = 'signin' }) {
   const [step, setStep] = React.useState(startStep);
   const [authMethod, setAuthMethod] = React.useState('wallet'); // wallet | email
-  const [email, setEmail] = React.useState('katya@orbitallabs.dev');
+  const [email, setEmail] = React.useState('operator@example.org');
   const [otp, setOtp] = React.useState('');
   const [topupAmt, setTopupAmt] = React.useState(20);
 
@@ -493,7 +493,7 @@ function CalcRow({ model, calls, note }) {
 // STAGE: KEY MINT
 function KeyMintStage({ amount, onNext, accent }) {
   const [revealed, setRevealed] = React.useState(false);
-  const SECRET = 'orog_live_4Xq2WmKxR8tBV9qP3sDf7nLb2cYg8jH1zQpWm93Z';
+  const SECRET = 'orog_test_4Xq2WmKxR8tBV9qP3sDf7nLb2cYg8jH1zQpWm93Z';
   return (
     <StageShell
       eyebrow="STEP 4 OF 5"
@@ -503,7 +503,7 @@ function KeyMintStage({ amount, onNext, accent }) {
       <Card padding={28}>
         <div style={{ display:'flex', alignItems:'center', justifyContent:'space-between', marginBottom:16 }}>
           <div>
-            <Mono size={10.5} color={C.crust[500]} style={{ letterSpacing:'0.12em', textTransform:'uppercase', display:'block', marginBottom:6 }}>Starter key · production</Mono>
+            <Mono size={10.5} color={C.crust[500]} style={{ letterSpacing:'0.12em', textTransform:'uppercase', display:'block', marginBottom:6 }}>Starter key · preview</Mono>
             <div style={{ display:'flex', alignItems:'center', gap:8 }}>
               <StatusDot tone="success" size={7}/>
               <Mono size={11.5} color={C.crust[100]}>id key_kx8q19m</Mono>
@@ -677,7 +677,7 @@ function CompleteStage({ onContinue, accent, amount }) {
           </svg>
         </div>
       </div>
-      <Mono size={11} color={C.crystal[400]} style={{ letterSpacing:'0.18em', marginBottom:14 }}>YOU'RE LIVE</Mono>
+      <Mono size={11} color={C.crystal[400]} style={{ letterSpacing:'0.18em', marginBottom:14 }}>PREVIEW READY</Mono>
       <h1 className="display" style={{ margin:0, fontSize:42, color:C.crust[100], letterSpacing:'-0.025em' }}>
         Verified inference, ready to ship.
       </h1>
