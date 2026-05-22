@@ -73,8 +73,8 @@ export function AppShell({ children }: { children: ReactNode }) {
         {!collapsed && (
           <footer className="border-t border-crust-800 px-3 py-3 text-[11px] text-crust-400">
             <div className="flex items-center gap-2">
-              <StatusDot tone="success" />
-              <span className="font-mono">forge testnet</span>
+              <StatusDot tone="warn" />
+              <span className="font-mono">test-edge preview</span>
             </div>
             <div className="mt-1 font-mono text-crust-500">orogen v6 · tx6</div>
           </footer>
@@ -115,7 +115,7 @@ function PreviewNotice() {
     <div className="border-b border-magma-500/30 bg-magma-500/10 px-8 py-2.5 text-[12px] text-magma-100">
       <span className="font-mono uppercase tracking-wider text-magma-300">test preview</span>
       <span className="ml-2 text-crust-300">
-        Gateway, chain RPC, and indexer are reachable on the test edge. Billing, burn, auth, keys,
+        Gateway, chain RPC, and indexer endpoints are configured for the test edge. Billing, burn, auth, keys,
         and account usage are unavailable; representative rows are labeled as preview data.
       </span>
     </div>

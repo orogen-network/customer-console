@@ -1,6 +1,6 @@
 # Design handoff — customer-console
 
-The full design handoff lives under [`design-reference/`](./design-reference/). The bundled README inside that directory is authoritative for tokens, atom specs, screen behaviour, and v0 acceptance criteria.
+The development-only design handoff lives under `design-reference/`. The bundled README inside that directory is authoritative for tokens, atom specs, screen behaviour, and v0 acceptance criteria.
 
 The high-fidelity JSX previews in `design-reference/design/src/*.jsx` are **not lifted directly** into production. They were built in inline-JSX for fast preview; our production code recreates them in Tailwind + TypeScript.
 

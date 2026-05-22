@@ -236,9 +236,9 @@ function ScreenSettings({ accent = Accent.magma }) {
                 { label:'', w:'40px', cell: ()=> <Icon.dots color={C.crust[400]}/> },
               ]}
               rows={[
-                { url:'https://api.orbitallabs.dev/orogen/events', events:['receipt.created','request.completed','key.rotated'], status:'ok', last:'2 min ago', rate:99.6 },
+                { url:'https://api.example.com/orogen/events', events:['receipt.created','request.completed','key.rotated'], status:'ok', last:'2 min ago', rate:99.6 },
                 { url:'https://hooks.slack.com/services/T0…/B0…/x9…', events:['replay.mismatch','spend.cap_warning'], status:'ok', last:'12 min ago', rate:100 },
-                { url:'https://internal.orbitallabs.dev/orogen-mirror', events:['invoice.paid','credit.topped_up'], status:'fail', last:'1 hour ago', rate:71.2 },
+                { url:'https://internal.example.com/orogen-mirror', events:['invoice.paid','credit.topped_up'], status:'fail', last:'1 hour ago', rate:71.2 },
               ]}
             />
           </Panel>

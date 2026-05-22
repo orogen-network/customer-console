@@ -20,7 +20,7 @@ npm run dev
 # open http://localhost:5173
 ```
 
-By default in dev mode the console talks to the live `forge-rpc.orogen.network` and `indexer.orogen.network` endpoints over CORS. Override per-upstream with env vars below.
+By default in dev mode the console is configured for the public test-edge `forge-rpc.orogen.network` and `indexer.orogen.network` endpoints over CORS. Override per-upstream with env vars below.
 
 ## Environment
 
@@ -38,7 +38,7 @@ Full production builds refuse to start without gateway, billing, burn, and index
 
 ## Current test-edge preview
 
-The deployed `app.orogen.network` surface is a test-edge preview. Gateway, chain RPC, and indexer are public, but auth, account usage, key creation, billing, and burn rails are unavailable. The UI intentionally labels representative rows as preview data and disables account-changing actions.
+The deployed `app.orogen.network` surface is a test-edge preview. Gateway, chain RPC, and indexer endpoints are configured for public smoke checks, but auth, account usage, key creation, billing, and burn rails are unavailable. The UI intentionally labels representative rows as preview data and disables account-changing actions.
 
 ## Upstream-unavailable pattern
 
@@ -46,7 +46,7 @@ Every panel that depends on a live service surfaces `{ status: 'unavailable', re
 
 ## Design
 
-See `design-reference/` for the high-fidelity design handoff (README + JSX previews). The implementation here recreates those screens in our actual stack — do not lift the JSX directly. See [DESIGN_HANDOFF.md](./DESIGN_HANDOFF.md) for the map from design files to source files.
+See [DESIGN_HANDOFF.md](./DESIGN_HANDOFF.md) for the map from design files to source files. The high-fidelity design reference is development-only and is not part of the public build.
 
 ## v0 target acceptance
 
